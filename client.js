@@ -14,6 +14,4 @@ const conn = function(){
 
 // console.log('Connecting ...');
 // conn();
-module.exports = {
-  conn
-}
+module.exports = conn;
