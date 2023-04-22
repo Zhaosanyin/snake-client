@@ -39,9 +39,22 @@ setTimeout(() => {
   clearInterval(intervalId);
 }, 5000);
 
+const setupInput = function() {
+  const stdin = process.stdin;
+  stdin.setRawMode(true);
+  stdin.setEncoding("utf8");
+  stdin.resume();
+  return stdin;
+};
 
-// setTimeout(() => {
-//   clearInterval(timerId);
-//   console.log('Timer stopped');
-// }, 5000);
 
+const handleUserInput = function() {
+  // code added;
+  process.stdin.on('data', (key) => {
+    if (key === '\u0003') {
+      process.exit();
+    }
+  });
+};
+
+process.stdin.on("data", handleUserInput);
