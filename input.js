@@ -13,10 +13,10 @@ const { connect } = require('http2');
 conn.on("connect", ()=>{
   console.log("Successfully connected to game server");
 });
-// conn.on("connect", ()=>{
-//   conn.write("Name: ZSY");
+conn.on("connect", ()=>{
+  conn.write("Name: ZSY");
   
-// });
+ });
 
 // conn.on("connect", ()=>{
 //   setTimeout(() => {
@@ -43,7 +43,7 @@ const setupInput = function(conn) {
 };
 
 
-const handleUserInput = function() {
+const handleUserInput = function(stdin, conn) {
   // code added;
   stdin.on('data', (key) => {
     if (key === '\u0003') {
@@ -60,13 +60,14 @@ const handleUserInput = function() {
     } else if (key === 'd') {
       conn.write("Move: right");
       // console.log("Move: right");
+    }else if(key === 'y'){
+      conn.write("Say: hello, I'm playing snake!");
     }
   });
 };
 
 const stdin = setupInput(conn);
-stdin.on("data", handleUserInput);
+// stdin.on("data", handleUserInput);
+handleUserInput(stdin, conn);
 
-
-module.exports = {setupInput};
-
+ module.exports = setupInput;
