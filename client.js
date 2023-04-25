@@ -1,11 +1,12 @@
 //play.js // client.js
-
-
+const {IP, PORT} = require('./constants');
+// console.log(IP);
+// console.log(PORT);
 const net = require("net");
 const conn = function(){
   const conn = net.createConnection({
-    host: '10.0.2.15',
-    port: '50541',
+    host: IP,
+    port: PORT,
   })
 
   conn.setEncoding('utf8');
