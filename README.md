@@ -8,7 +8,7 @@ Before you can run this client, you will need to be running the server side whic
 
 ## Final Product
 
-!["snake_one"](#/Users/zhaosanyin/lighthouse/snake-client/screenshot-snake1.png)
+!["snake_one"](./screenshot-snake1.png)
 !["snake_two"](./screenshot-snake2.png)
 
 
