@@ -1,14 +1,13 @@
 // const setupInput = require("./play.js");
 
 //play.js // client.js
+
 const connF = require('./client.js');
 const net = require("net");
 const { connect } = require('http2');
 
 
-
-
- const conn = connF();
+const conn = connF();
 
 conn.on("connect", ()=>{
   console.log("Successfully connected to game server");
